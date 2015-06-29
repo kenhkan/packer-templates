@@ -1,7 +1,7 @@
 {
     "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
     "push": {
-        "name": "kenhkan/ubuntu-yesod-postgres",
+        "name": "kenhkan/ubuntu1404-yesod-postgres",
         "vcs": true
     },
     "builders": [{
@@ -58,10 +58,14 @@
             "keep_input_artifact": false,
             "type": "vagrant"
         }, {
-            "type": "vagrant-cloud",
-            "box_tag": "kenhkan/test-vagrant-cloud",
-            "access_token": "{{user `atlas_token`}}",
-            "version": "{{user `version`}}"
+            "type": "atlas",
+            "only": ["virtualbox-iso"],
+            "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
+            "artifact_type": "vagrant.box",
+            "metadata": {
+                "provider": "virtualbox",
+                "version": "{{user `version`}}"
+            }
         }]
     ],
     "provisioners": [{
@@ -116,7 +120,7 @@
         "update": "false",
         "version": "0.0.1",
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_name": "{{env `ATLAS_NAME`}}",
+        "atlas_name": "ubuntu1404-yesod-postgres",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
     }
 }
