@@ -53,27 +53,16 @@
         "virtualbox_version_file": ".vbox_version",
         "vm_name": "ubuntu1404"
     }],
-    "post-processors": [{
-        "keep_input_artifact": false,
-        "output": "box/{{.Provider}}/ubuntu1404-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box",
-        "type": "vagrant"
-    }, {
-        "type": "atlas",
-        "only": ["virtualbox-iso"],
-        "token": "{{user `atlas_token`}}",
-        "artifact": "{{user `atlas_username`}}/{{user `atlas_name`}}",
-        "artifact_type": "vagrant.box",
-        "metadata": {
-            "provider": "virtualbox",
+    "post-processors": [
+        [{
+            "keep_input_artifact": false,
+            "type": "vagrant"
+        }, {
+            "type": "vagrant-cloud",
+            "box_tag": "kenhkan/test-vagrant-cloud",
+            "access_token": "{{user `atlas_token`}}",
             "version": "{{user `version`}}"
-        }
-    },
-      {
-        "type": "vagrant-cloud",
-        "box_tag": "kenhkan/test100",
-        "access_token": "{{user `atlas_token`}}",
-        "version": "{{user `version`}}"
-      }
+        }]
     ],
     "provisioners": [{
         "environment_vars": [
@@ -125,7 +114,7 @@
         "ssh_password": "vagrant",
         "ssh_username": "vagrant",
         "update": "false",
-        "version": "0.1.0",
+        "version": "0.0.1",
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
         "atlas_name": "{{env `ATLAS_NAME`}}",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
