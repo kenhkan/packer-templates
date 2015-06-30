@@ -1,6 +1,6 @@
 {
     "push": {
-        "name": "kenhkan/ubuntu1404-elm",
+        "name": "kenhkan/ubuntu1404-elm0015",
         "vcs": true
     },
     "builders": [{
@@ -64,7 +64,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 elm-1.5.2",
+                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 elm-0.15.1",
                 "version": "{{user `version`}}"
             }
         }]
@@ -120,8 +120,8 @@
         "ssh_username": "vagrant",
         "update": "false",
         "version": "0.0.1",
-        "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_box_name": "ubuntu1404-elm",
+        "atlas_username": "kenhkan",
+        "atlas_box_name": "ubuntu1404-elm0015",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
     }
 }
