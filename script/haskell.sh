@@ -19,5 +19,5 @@ sudo apt-get install -y wget
 
 # Required Cabal binaries
 wget --output-document=cabal.config http://www.stackage.org/lts-2.15/cabal.config
-/opt/cabal/1.20/bin/cabal update
-/opt/cabal/1.20/bin/cabal install alex happy
+cabal update
+cabal install alex happy
