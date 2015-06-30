@@ -1,6 +1,6 @@
 {
     "push": {
-        "name": "kenhkan/ubuntu1404-yesod-postgres",
+        "name": "kenhkan/ubuntu1404-elm",
         "vcs": true
     },
     "builders": [{
@@ -64,7 +64,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
+                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 elm-1.5.2",
                 "version": "{{user `version`}}"
             }
         }]
@@ -93,9 +93,8 @@
             "script/minimize.sh",
             "script/cleanup.sh",
             "script/cmtool.sh",
-            "script/postgres.sh",
-            "script/haskell.sh",
-            "script/yesod.sh"
+            "script/node.sh",
+            "script/elm.sh"
         ],
         "type": "shell"
     }],
@@ -122,7 +121,7 @@
         "update": "false",
         "version": "0.0.1",
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
-        "atlas_box_name": "ubuntu1404-yesod-postgres",
+        "atlas_box_name": "ubuntu1404-elm",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
     }
 }

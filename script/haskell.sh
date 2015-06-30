@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Haskell Toolbelt
 sudo apt-get update
+
+# Haskell Toolbelt
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:hvr/ghc
-sudo apt-get update
 sudo apt-get install -y cabal-install-1.20 ghc-7.8.4
 
 # Link Cabal and GHC
@@ -19,8 +19,5 @@ sudo apt-get install -y wget
 
 # Required Cabal binaries
 wget --output-document=cabal.config http://www.stackage.org/lts-2.15/cabal.config
-cabal update
-cabal install alex happy
-
-# Yesod
-cabal install yesod-bin
+/opt/cabal/1.20/bin/cabal update
+/opt/cabal/1.20/bin/cabal install alex happy
