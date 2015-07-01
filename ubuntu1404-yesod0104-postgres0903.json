@@ -94,7 +94,6 @@
             "script/cleanup.sh",
             "script/cmtool.sh",
             "script/postgres.sh",
-            "script/haskell.sh",
             "script/yesod.sh"
         ],
         "type": "shell"
