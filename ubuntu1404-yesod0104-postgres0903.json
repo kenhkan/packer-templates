@@ -51,6 +51,16 @@
         ],
         "virtualbox_version_file": ".vbox_version",
         "vm_name": "ubuntu1404"
+    }, {
+        "type": "amazon-ebs",
+        "region": "us-east-1",
+        "source_ami": "ami-cf35f3a4",
+        "instance_type": "t2.micro",
+        "ssh_username": "ubuntu",
+        "ami_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{timestamp}}",
+        "associate_public_ip_address": true,
+        "vpc_id": "vpc-40292325",
+        "subnet_id": "subnet-c03d67b7"
     }],
     "post-processors": [
         [{
@@ -67,6 +77,13 @@
                 "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
                 "version": "{{user `version`}}"
             }
+        }],
+        [{
+            "type": "atlas",
+            "only": ["amazon-ebs"],
+            "artifact": "{{user `atlas_username`}}/{{user `atlas_box_name`}}",
+            "artifact_type": "aws.ami",
+            "metadata": {}
         }]
     ],
     "provisioners": [{
