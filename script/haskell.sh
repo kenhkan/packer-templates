@@ -7,10 +7,18 @@ sudo apt-get update
 sudo apt-get install -y cabal-install-1.20 ghc-7.8.4
 
 # Link Cabal and GHC
-cat >> /etc/bash.bashrc <<EOF
-export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
-EOF
-export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
+CABAL_PATH=/opt/cabal/1.20/bin
+GHC_PATH=/opt/ghc/7.8.4/bin
+sudo ln -s $CABAL_PATH/cabal /usr/bin/cabal
+sudo ln -s $GHC_PATH/ghc /usr/bin/ghc
+sudo ln -s $GHC_PATH/ghci /usr/bin/ghci
+sudo ln -s $GHC_PATH/ghc-pkg /usr/bin/ghc-pkg
+sudo ln -s $GHC_PATH/haddock /usr/bin/haddock
+sudo ln -s $GHC_PATH/hp2ps /usr/bin/hp2ps
+sudo ln -s $GHC_PATH/hpc /usr/bin/hpc
+sudo ln -s $GHC_PATH/hsc2hs /usr/bin/hsc2hs
+sudo ln -s $GHC_PATH/runghc /usr/bin/runghc
+sudo ln -s $GHC_PATH/runhaskell /usr/bin/runhaskell
 
 # Additional required libraries
 sudo apt-get install -y zlib1g-dev
