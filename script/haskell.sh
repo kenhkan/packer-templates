@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install -y cabal-install-1.20 ghc-7.8.4
 
 # Link Cabal and GHC
-cat >> /etc/profile.d/cabal.sh <<EOF
+cat >> /etc/bash.bashrc <<EOF
 export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
 EOF
 export PATH=~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:$PATH
