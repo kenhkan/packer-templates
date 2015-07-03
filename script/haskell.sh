@@ -29,8 +29,3 @@ export PATH=~/.cabal/bin:$PATH
 # Additional required libraries
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y wget
-
-# Required Cabal binaries
-wget --output-document=cabal.config http://www.stackage.org/lts-2.15/cabal.config
-cabal update
-cabal install alex happy
