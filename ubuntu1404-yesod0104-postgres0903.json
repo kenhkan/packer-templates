@@ -57,7 +57,7 @@
         "source_ami": "ami-cf35f3a4",
         "instance_type": "t2.micro",
         "ssh_username": "ubuntu",
-        "ami_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{timestamp}}",
+        "ami_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{user `version`}}",
         "associate_public_ip_address": true,
         "vpc_id": "vpc-40292325",
         "subnet_id": "subnet-c03d67b7"
@@ -137,7 +137,7 @@
         "ssh_password": "vagrant",
         "ssh_username": "vagrant",
         "update": "false",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "atlas_username": "kenhkan",
         "atlas_box_name": "ubuntu1404-yesod0104-postgres0903",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
