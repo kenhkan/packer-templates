@@ -27,5 +27,6 @@ EOF
 export PATH=~/.cabal/bin:$PATH
 
 # Additional required libraries
-sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y wget
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y lib32z1-dev
