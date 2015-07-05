@@ -112,9 +112,10 @@
             "script/cmtool.sh"
         ],
         "type": "shell"
-      }, {
+    }, {
         "scripts": [
-            "script/run.sh"
+            "script/postgres.sh",
+            "script/stack.sh"
         ],
         "type": "shell"
     }],

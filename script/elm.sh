@@ -2,5 +2,5 @@
 
 sudo apt-get update
 
-# Setup Elm
+# Set elm up
 npm install -g elm@1.5.2

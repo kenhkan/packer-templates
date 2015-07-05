@@ -1,6 +1,6 @@
 {
     "push": {
-        "name": "kenhkan/ubuntu1404-elm0015",
+        "name": "kenhkan/ubuntu1404-elm0105",
         "vcs": true
     },
     "builders": [{
@@ -92,7 +92,11 @@
             "script/vmtool.sh",
             "script/minimize.sh",
             "script/cleanup.sh",
-            "script/cmtool.sh",
+            "script/cmtool.sh"
+        ],
+        "type": "shell"
+    }, {
+        "scripts": [
             "script/node.sh",
             "script/elm.sh"
         ],
