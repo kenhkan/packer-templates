@@ -125,7 +125,7 @@
         "update": "false",
         "version": "0.0.1",
         "atlas_username": "kenhkan",
-        "atlas_box_name": "ubuntu1404-elm0015",
+        "atlas_box_name": "ubuntu1404-elm0105",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
     }
 }
