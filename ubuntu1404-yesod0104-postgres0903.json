@@ -140,7 +140,7 @@
         "ssh_password": "vagrant",
         "ssh_username": "vagrant",
         "update": "false",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "atlas_username": "kenhkan",
         "atlas_box_name": "ubuntu1404-yesod0104-postgres0903",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
