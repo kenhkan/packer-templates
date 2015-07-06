@@ -92,12 +92,12 @@
             "script/vmtool.sh",
             "script/minimize.sh",
             "script/cleanup.sh",
-            "script/cmtool.sh",
-            "script/node.sh"
+            "script/cmtool.sh"
         ],
         "type": "shell"
     }, {
         "scripts": [
+            "script/node.sh",
             "script/elm.sh"
         ],
         "type": "shell"
