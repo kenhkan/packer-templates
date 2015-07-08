@@ -52,40 +52,13 @@
         "virtualbox_version_file": ".vbox_version",
         "vm_name": "ubuntu1404"
     }, {
-        "type": "amazon-ebs",
-        "region": "us-east-1",
-        "source_ami": "ami-cf35f3a4",
-        "instance_type": "t2.micro",
-        "ssh_username": "ubuntu",
-        "ami_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{user `version`}}",
-        "associate_public_ip_address": true,
-        "vpc_id": "vpc-40292325",
-        "subnet_id": "subnet-c03d67b7"
+        "type": "digitalocean",
+        "api_token": "{{user `digitalocean_token`}}",
+        "image": "ubuntu-14-04-x64",
+        "region": "nyc3",
+        "size": "1gb",
+        "snapshot_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{user `version`}}"
     }],
-    "post-processors": [
-        [{
-            "keep_input_artifact": false,
-            "output": "box/{{.Provider}}/ubuntu1404-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box",
-            "type": "vagrant"
-        }, {
-            "type": "atlas",
-            "only": ["virtualbox-iso"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_box_name`}}",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "virtualbox",
-                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
-                "version": "{{user `version`}}"
-            }
-        }],
-        [{
-            "type": "atlas",
-            "only": ["amazon-ebs"],
-            "artifact": "{{user `atlas_username`}}/{{user `atlas_box_name`}}",
-            "artifact_type": "aws.ami",
-            "metadata": {}
-        }]
-    ],
     "provisioners": [{
         "environment_vars": [
             "CM={{user `cm`}}",
@@ -119,6 +92,25 @@
         ],
         "type": "shell"
     }],
+    "post-processors": [
+        [{
+            "only": ["virtualbox-iso"],
+            "type": "vagrant",
+            "keep_input_artifact": false,
+            "only": ["virtualbox-iso"],
+            "output": "box/{{.Provider}}/ubuntu1404-{{user `cm`}}{{user `cm_version`}}-{{user `version`}}.box"
+        }, {
+            "only": ["virtualbox-iso"],
+            "type": "atlas",
+            "artifact": "{{user `atlas_username`}}/{{user `atlas_box_name`}}",
+            "artifact_type": "vagrant.box",
+            "metadata": {
+                "provider": "virtualbox",
+                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
+                "version": "{{user `version`}}"
+            }
+        }]
+    ],
     "variables": {
         "cleanup_pause": "",
         "cm": "nocm",
@@ -140,9 +132,10 @@
         "ssh_password": "vagrant",
         "ssh_username": "vagrant",
         "update": "false",
-        "version": "0.0.7",
         "atlas_username": "kenhkan",
         "atlas_box_name": "ubuntu1404-yesod0104-postgres0903",
-        "atlas_token": "{{env `ATLAS_TOKEN`}}"
+        "atlas_token": "{{env `ATLAS_TOKEN`}}",
+        "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+        "version": "0.0.9"
     }
 }
