@@ -137,6 +137,6 @@
         "atlas_box_name": "ubuntu1404-yesod0104-postgres0903",
         "atlas_token": "{{env `ATLAS_TOKEN`}}",
         "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-        "version": "0.0.9"
+        "version": "0.0.10"
     }
 }
