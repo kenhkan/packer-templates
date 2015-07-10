@@ -1,6 +1,6 @@
 {
     "push": {
-        "name": "kenhkan/ubuntu1404-yesod0104-postgres0903",
+        "name": "kenhkan/ubuntu1404-postgres0903",
         "vcs": true
     },
     "builders": [{
@@ -40,7 +40,7 @@
                 "modifyvm",
                 "{{.Name}}",
                 "--memory",
-                "1024"
+                "2048"
             ],
             [
                 "modifyvm",
@@ -56,7 +56,7 @@
         "api_token": "{{user `digitalocean_token`}}",
         "image": "ubuntu-14-04-x64",
         "region": "nyc3",
-        "size": "1gb",
+        "size": "2gb",
         "snapshot_name": "{{user `atlas_username`}}/{{user `atlas_box_name`}}/{{user `version`}}"
     }],
     "provisioners": [{
@@ -88,8 +88,7 @@
     }, {
         "scripts": [
             "script/postgres.sh",
-            "script/stack.sh",
-            "script/yesod.sh"
+            "script/stack.sh"
         ],
         "type": "shell"
     }],
@@ -107,7 +106,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 yesod-1.4.10 psql-9.3.8",
+                "description": "ubuntu-14.04 psql-9.3.8",
                 "version": "{{user `version`}}"
             }
         }]
@@ -134,9 +133,9 @@
         "ssh_username": "vagrant",
         "update": "false",
         "atlas_username": "kenhkan",
-        "atlas_box_name": "ubuntu1404-yesod0104-postgres0903",
+        "atlas_box_name": "ubuntu1404-postgres0903",
         "atlas_token": "{{env `ATLAS_TOKEN`}}",
         "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-        "version": "0.0.10"
+        "version": "0.0.14"
     }
 }

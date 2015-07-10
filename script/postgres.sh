@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+# Update repositories
 sudo apt-get update
 
+# Install PostgreSQL as well as the library
 sudo apt-get install -y postgresql-9.3
 sudo apt-get install -y libpq-dev
 
