@@ -64,7 +64,7 @@
             "artifact_type": "vagrant.box",
             "metadata": {
                 "provider": "virtualbox",
-                "description": "ubuntu-14.04 ghc-7.8.4 cabal-1.20.0.0 stackage-2.15 elm-0.15.1",
+                "description": "ubuntu-14.04 elm-1.5.2",
                 "version": "{{user `version`}}"
             }
         }]
@@ -123,7 +123,7 @@
         "ssh_password": "vagrant",
         "ssh_username": "vagrant",
         "update": "false",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "atlas_username": "kenhkan",
         "atlas_box_name": "ubuntu1404-elm0105",
         "atlas_token": "{{env `ATLAS_TOKEN`}}"
