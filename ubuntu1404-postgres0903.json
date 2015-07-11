@@ -1,4 +1,31 @@
 {
+    "variables": {
+        "cleanup_pause": "",
+        "cm": "nocm",
+        "cm_version": "",
+        "custom_script": ".",
+        "ftp_proxy": "{{env `ftp_proxy`}}",
+        "headless": "",
+        "http_proxy": "{{env `http_proxy`}}",
+        "https_proxy": "{{env `https_proxy`}}",
+        "install_vagrant_key": "true",
+        "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e",
+        "iso_name": "ubuntu-14.04.2-server-amd64.iso",
+        "iso_path": "iso",
+        "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.2-server-amd64.iso",
+        "no_proxy": "{{env `no_proxy`}}",
+        "rsync_proxy": "{{env `rsync_proxy`}}",
+        "hostname": "vagrant",
+        "ssh_fullname": "vagrant",
+        "ssh_password": "vagrant",
+        "ssh_username": "vagrant",
+        "update": "false",
+        "atlas_username": "kenhkan",
+        "atlas_box_name": "ubuntu1404-postgres0903",
+        "atlas_token": "{{env `ATLAS_TOKEN`}}",
+        "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
+        "version": "0.1.1"
+    },
     "push": {
         "name": "kenhkan/ubuntu1404-postgres0903",
         "vcs": true
@@ -110,32 +137,5 @@
                 "version": "{{user `version`}}"
             }
         }]
-    ],
-    "variables": {
-        "cleanup_pause": "",
-        "cm": "nocm",
-        "cm_version": "",
-        "custom_script": ".",
-        "ftp_proxy": "{{env `ftp_proxy`}}",
-        "headless": "",
-        "http_proxy": "{{env `http_proxy`}}",
-        "https_proxy": "{{env `https_proxy`}}",
-        "install_vagrant_key": "true",
-        "iso_checksum": "3bfa6eac84d527380d0cc52db9092cde127f161e",
-        "iso_name": "ubuntu-14.04.2-server-amd64.iso",
-        "iso_path": "iso",
-        "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.2-server-amd64.iso",
-        "no_proxy": "{{env `no_proxy`}}",
-        "rsync_proxy": "{{env `rsync_proxy`}}",
-        "hostname": "vagrant",
-        "ssh_fullname": "vagrant",
-        "ssh_password": "vagrant",
-        "ssh_username": "vagrant",
-        "update": "false",
-        "atlas_username": "kenhkan",
-        "atlas_box_name": "ubuntu1404-postgres0903",
-        "atlas_token": "{{env `ATLAS_TOKEN`}}",
-        "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-        "version": "0.1.1"
-    }
+    ]
 }
