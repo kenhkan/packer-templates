@@ -136,6 +136,6 @@
         "atlas_box_name": "ubuntu1404-postgres0903",
         "atlas_token": "{{env `ATLAS_TOKEN`}}",
         "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
-        "version": "0.1.0"
+        "version": "0.1.1"
     }
 }
