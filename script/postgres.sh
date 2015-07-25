@@ -12,7 +12,9 @@ TEMP_FILE=.postgres.sql
 cat <<'EOF' > $TEMP_FILE
 CREATE USER vagrant WITH PASSWORD 'vagrant';
 CREATE DATABASE vagrant;
-GRANT ALL PRIVILEGES ON DATABASE vagrant TO vagrant;
+\connect vagrant
+ALTER SCHEMA public OWNER TO vagrant;
+ALTER DATABASE vagrant OWNER TO vagrant;
 \q
 EOF
 sudo -u postgres psql -f $TEMP_FILE

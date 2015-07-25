@@ -21,13 +21,13 @@
         "ssh_username": "vagrant",
         "update": "false",
         "atlas_username": "kenhkan",
-        "atlas_box_name": "ubuntu1404-postgres0903",
+        "atlas_box_name": "ubuntu1404-postgres0903-stack0216",
         "atlas_token": "{{env `ATLAS_TOKEN`}}",
         "digitalocean_token": "{{env `DIGITALOCEAN_API_TOKEN`}}",
         "version": "0.1.5"
     },
     "push": {
-        "name": "kenhkan/ubuntu1404-postgres0903",
+        "name": "kenhkan/ubuntu1404-postgres0903-stack0216",
         "vcs": true
     },
     "builders": [{
